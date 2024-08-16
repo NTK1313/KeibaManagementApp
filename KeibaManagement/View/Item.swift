@@ -1,8 +1,8 @@
 //
 //  Item.swift
-//  KeibaManagement
+//  test
 //
-//  Created by Naoto on 2024/06/26.
+//  Created by Naoto on 2024/08/10.
 //
 
 import Foundation

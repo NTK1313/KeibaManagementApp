@@ -7,20 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20743A4206B83B1BFDD20C62 /* Pods_KeibaManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */; };
+		5CBAF56F2C2E2D0800118A1A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */; };
+		5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5702C2FFB1700118A1A /* Consts.swift */; };
+		5CBAF5772C30EED800118A1A /* RaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5762C30EED800118A1A /* RaceInfo.swift */; };
+		5CBAF5792C38C33900118A1A /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5782C38C33900118A1A /* CommonUtils.swift */; };
+		5CBDA8D92C3B5F560018B19A /* PickerViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */; };
+		5CBDA8DB2C3CA92F0018B19A /* BalanceOfPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA8DA2C3CA92F0018B19A /* BalanceOfPayment.swift */; };
+		5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */; };
+		5CBFC2C52C5DB0D100DAD8F9 /* BalanceOfPaymentDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C42C5DB0D100DAD8F9 /* BalanceOfPaymentDaily.swift */; };
+		5CBFC2C92C674CBC00DAD8F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */; };
+		5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2E62C674F2F00DAD8F9 /* Item.swift */; };
+		5CBFC2E92C67592500DAD8F9 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2E82C67592500DAD8F9 /* DatabaseManager.swift */; };
+		5CBFC2EB2C67616B00DAD8F9 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */; };
+		5CBFC2ED2C6AD84E00DAD8F9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EC2C6AD84E00DAD8F9 /* ViewModel.swift */; };
+		5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EE2C6B03C400DAD8F9 /* String+Extension.swift */; };
+		5CBFC2F12C6B23E000DAD8F9 /* DailyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */; };
 		5CD171702C2B737E00E1FCC1 /* KeibaManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1716F2C2B737E00E1FCC1 /* KeibaManagementApp.swift */; };
 		5CD171722C2B737E00E1FCC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171712C2B737E00E1FCC1 /* ContentView.swift */; };
-		5CD171742C2B737E00E1FCC1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171732C2B737E00E1FCC1 /* Item.swift */; };
 		5CD171762C2B737F00E1FCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD171752C2B737F00E1FCC1 /* Assets.xcassets */; };
 		5CD171792C2B737F00E1FCC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD171782C2B737F00E1FCC1 /* Preview Assets.xcassets */; };
+		5CD171802C2B763600E1FCC1 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1717F2C2B763600E1FCC1 /* FirstView.swift */; };
+		5CD171862C2B772900E1FCC1 /* TopCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */; };
+		5CD1718A2C2B798500E1FCC1 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171892C2B798500E1FCC1 /* CalenderView.swift */; };
+		5CD3700B2C6C31F800EA1F82 /* DailyListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */; };
+		5CD3700E2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700D2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift */; };
+		5CD370102C6C45B500EA1F82 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700F2C6C45B500EA1F82 /* Enums.swift */; };
+		5CD370122C6ED9B600EA1F82 /* RegisterViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		5CBAF5702C2FFB1700118A1A /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		5CBAF5762C30EED800118A1A /* RaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfo.swift; sourceTree = "<group>"; };
+		5CBAF5782C38C33900118A1A /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewStyle.swift; sourceTree = "<group>"; };
+		5CBDA8DA2C3CA92F0018B19A /* BalanceOfPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceOfPayment.swift; sourceTree = "<group>"; };
+		5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToast.swift; sourceTree = "<group>"; };
+		5CBFC2C42C5DB0D100DAD8F9 /* BalanceOfPaymentDaily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BalanceOfPaymentDaily.swift; path = KeibaManagement/DataModel/BalanceOfPaymentDaily.swift; sourceTree = SOURCE_ROOT; };
+		5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		5CBFC2E62C674F2F00DAD8F9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5CBFC2E82C67592500DAD8F9 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		5CBFC2EC2C6AD84E00DAD8F9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5CBFC2EE2C6B03C400DAD8F9 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListView.swift; sourceTree = "<group>"; };
 		5CD1716C2C2B737E00E1FCC1 /* KeibaManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeibaManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD1716F2C2B737E00E1FCC1 /* KeibaManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeibaManagementApp.swift; sourceTree = "<group>"; };
 		5CD171712C2B737E00E1FCC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5CD171732C2B737E00E1FCC1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5CD171752C2B737F00E1FCC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD171782C2B737F00E1FCC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5CD1717F2C2B763600E1FCC1 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCalenderView.swift; sourceTree = "<group>"; };
+		5CD171892C2B798500E1FCC1 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListRow.swift; sourceTree = "<group>"; };
+		5CD3700D2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceOfPaymentDetail.swift; sourceTree = "<group>"; };
+		5CD3700F2C6C45B500EA1F82 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewInfo.swift; sourceTree = "<group>"; };
+		C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeibaManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F236B75D788A4E5EFB6595 /* Pods-KeibaManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.release.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.release.xcconfig"; sourceTree = "<group>"; };
+		EFB1FB08D3EF617F52C4F52B /* Pods-KeibaManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.debug.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +74,60 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20743A4206B83B1BFDD20C62 /* Pods_KeibaManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CBAF5752C30EEB400118A1A /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CBFC2C42C5DB0D100DAD8F9 /* BalanceOfPaymentDaily.swift */,
+				5CD3700D2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift */,
+				5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */,
+				5CBFC2EC2C6AD84E00DAD8F9 /* ViewModel.swift */,
+				5CD3700C2C6C3ED300EA1F82 /* Realm */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5CBDA8D72C3B5F390018B19A /* components */ = {
+			isa = PBXGroup;
+			children = (
+				5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */,
+				5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		5CBFC2C62C674C8F00DAD8F9 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5CBAF5782C38C33900118A1A /* CommonUtils.swift */,
+				5CBFC2E82C67592500DAD8F9 /* DatabaseManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5CBFC2C72C674CA800DAD8F9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */,
+				5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */,
+				5CBFC2EE2C6B03C400DAD8F9 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5CD171632C2B737E00E1FCC1 = {
 			isa = PBXGroup;
 			children = (
 				5CD1716E2C2B737E00E1FCC1 /* KeibaManagement */,
 				5CD1716D2C2B737E00E1FCC1 /* Products */,
+				6CEB0982B92244BCB2509BFB /* Pods */,
+				AD020AF28E01EFE742866AAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,8 +143,11 @@
 			isa = PBXGroup;
 			children = (
 				5CD1716F2C2B737E00E1FCC1 /* KeibaManagementApp.swift */,
-				5CD171712C2B737E00E1FCC1 /* ContentView.swift */,
-				5CD171732C2B737E00E1FCC1 /* Item.swift */,
+				5CBAF5702C2FFB1700118A1A /* Consts.swift */,
+				5CD3700F2C6C45B500EA1F82 /* Enums.swift */,
+				5CBAF5752C30EEB400118A1A /* DataModel */,
+				5CD171832C2B767200E1FCC1 /* View */,
+				5CD171842C2B770D00E1FCC1 /* Model */,
 				5CD171752C2B737F00E1FCC1 /* Assets.xcassets */,
 				5CD171772C2B737F00E1FCC1 /* Preview Content */,
 			);
@@ -70,6 +162,57 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5CD171832C2B767200E1FCC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CD171712C2B737E00E1FCC1 /* ContentView.swift */,
+				5CBFC2E62C674F2F00DAD8F9 /* Item.swift */,
+				5CD1717F2C2B763600E1FCC1 /* FirstView.swift */,
+				5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */,
+				5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */,
+				5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */,
+				5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */,
+				5CBDA8D72C3B5F390018B19A /* components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CD171842C2B770D00E1FCC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CD171892C2B798500E1FCC1 /* CalenderView.swift */,
+				5CBFC2C72C674CA800DAD8F9 /* Extension */,
+				5CBFC2C62C674C8F00DAD8F9 /* Util */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5CD3700C2C6C3ED300EA1F82 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				5CBAF5762C30EED800118A1A /* RaceInfo.swift */,
+				5CBDA8DA2C3CA92F0018B19A /* BalanceOfPayment.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		6CEB0982B92244BCB2509BFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFB1FB08D3EF617F52C4F52B /* Pods-KeibaManagement.debug.xcconfig */,
+				D3F236B75D788A4E5EFB6595 /* Pods-KeibaManagement.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD020AF28E01EFE742866AAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CD1717C2C2B737F00E1FCC1 /* Build configuration list for PBXNativeTarget "KeibaManagement" */;
 			buildPhases = (
+				0A2105E0010C99C5BEF706C2 /* [CP] Check Pods Manifest.lock */,
 				5CD171682C2B737E00E1FCC1 /* Sources */,
 				5CD171692C2B737E00E1FCC1 /* Frameworks */,
 				5CD1716A2C2B737E00E1FCC1 /* Resources */,
+				24A1D863A6454A8EDD372E0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,14 +280,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A2105E0010C99C5BEF706C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeibaManagement-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24A1D863A6454A8EDD372E0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CD171682C2B737E00E1FCC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBFC2E92C67592500DAD8F9 /* DatabaseManager.swift in Sources */,
+				5CBDA8D92C3B5F560018B19A /* PickerViewStyle.swift in Sources */,
 				5CD171722C2B737E00E1FCC1 /* ContentView.swift in Sources */,
-				5CD171742C2B737E00E1FCC1 /* Item.swift in Sources */,
+				5CD3700E2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift in Sources */,
+				5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */,
+				5CD171802C2B763600E1FCC1 /* FirstView.swift in Sources */,
+				5CD1718A2C2B798500E1FCC1 /* CalenderView.swift in Sources */,
+				5CD171862C2B772900E1FCC1 /* TopCalenderView.swift in Sources */,
+				5CBAF5772C30EED800118A1A /* RaceInfo.swift in Sources */,
+				5CD370102C6C45B500EA1F82 /* Enums.swift in Sources */,
+				5CBAF5792C38C33900118A1A /* CommonUtils.swift in Sources */,
+				5CD3700B2C6C31F800EA1F82 /* DailyListRow.swift in Sources */,
+				5CBFC2EB2C67616B00DAD8F9 /* Dictionary+Extension.swift in Sources */,
+				5CD370122C6ED9B600EA1F82 /* RegisterViewInfo.swift in Sources */,
+				5CBFC2ED2C6AD84E00DAD8F9 /* ViewModel.swift in Sources */,
+				5CBFC2C92C674CBC00DAD8F9 /* Date+Extension.swift in Sources */,
+				5CBFC2C52C5DB0D100DAD8F9 /* BalanceOfPaymentDaily.swift in Sources */,
+				5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */,
+				5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */,
+				5CBAF56F2C2E2D0800118A1A /* RegisterView.swift in Sources */,
+				5CBFC2F12C6B23E000DAD8F9 /* DailyListView.swift in Sources */,
+				5CBDA8DB2C3CA92F0018B19A /* BalanceOfPayment.swift in Sources */,
 				5CD171702C2B737E00E1FCC1 /* KeibaManagementApp.swift in Sources */,
+				5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +478,7 @@
 		};
 		5CD1717D2C2B737F00E1FCC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFB1FB08D3EF617F52C4F52B /* Pods-KeibaManagement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -278,6 +487,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KeibaManagement/Preview Content\"";
 				DEVELOPMENT_TEAM = X3P8KRGF7G;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -299,6 +509,7 @@
 		};
 		5CD1717E2C2B737F00E1FCC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3F236B75D788A4E5EFB6595 /* Pods-KeibaManagement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -307,6 +518,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KeibaManagement/Preview Content\"";
 				DEVELOPMENT_TEAM = X3P8KRGF7G;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
