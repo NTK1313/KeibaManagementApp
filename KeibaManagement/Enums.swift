@@ -111,4 +111,11 @@ class Enums {
             }
         }
     }
+    
+    // 日次・月次・年次の区分
+    enum Term {
+        case daily,
+             monthly,
+             yearly
+    }
 }

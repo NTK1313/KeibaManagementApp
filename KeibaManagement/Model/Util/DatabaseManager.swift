@@ -12,10 +12,38 @@ class DatabaseManager {
     
     let realm = try! Realm()
     
+    /// データ更新
+    /// - Parameters:
+    ///   - key: 検索対象カラム
+    ///   - value: 検索対象の値
+    ///   - return: 結果メッセージ
+    // TODO: @escapingを使ってclosureの形に書き換える
+    // TODO: 引数や処理条件を再考する
+    func updateBalanceOfPayment(key: String, value: String, updateInfo: BalanceOfPaymentDetail) -> String {
+        var resultCode = Enums.RealmResultCode.success.message
+        let results = realm.objects(BalanceOfPayment.self).filter("\(key) == '\(value)'")
+        if results.count > 0 {
+            results.forEach { result in
+                do {
+                    try realm.write {
+                        result.getAmount = updateInfo.getAmount
+                        result.buyAmount = updateInfo.buyAmount
+                    }
+                } catch {
+                    print("Error \(error)")
+                    resultCode = Enums.RealmResultCode.failure.message
+                }
+            }
+        } else {
+            resultCode = Enums.RealmResultCode.noData.message
+        }
+        return resultCode
+    }
+    
     /// データ削除
     /// - Parameters:
-    ///   - key: 削除対象カラム
-    ///   - value: 削除対象の値
+    ///   - key: 検索対象カラム
+    ///   - value: 検索対象の値
     ///   - return: 結果メッセージ
     // TODO: @escapingを使ってclosureの形に書き換える
     func deleteBalanceOfPayment(key: String, value: String) -> String {
@@ -37,37 +65,47 @@ class DatabaseManager {
     }
     
     
-    /// 日時集計した購入金額と払戻金額一覧の取得
+    /// 集計した購入金額と払戻金額一覧の取得
     /// - Parameters:
-    ///   - key: 検索するカラム
+    ///   - key: 検索対象カラム
     ///   - value: 検索対象の値
-    ///   - return: 日時で集計した購入金額と払戻金額のリスト
-    func getBalanceOfPayment(key: String, value: String, sort: String = "") -> [String: BalanceOfPaymentDaily] {
-        var dailyList: [String: BalanceOfPaymentDaily] = [:]
+    ///   - term: 期間
+    ///   - sort: ソート順（任意）
+    ///   - return: 集計した購入金額と払戻金額のリスト
+    func getBalanceOfPaymentSummary(key: String, value: String, term: Enums.Term, sort: String = "") -> [String: BalanceOfPaymentSummary] {
+        var summaryList: [String: BalanceOfPaymentSummary] = [:]
         let sortKey = sort == "" ? key: sort
         let results = realm.objects(BalanceOfPayment.self).filter("\(key) LIKE '\(value)*'").sorted(byKeyPath: "\(sortKey)")
-        var daily = BalanceOfPaymentDaily()
-        var lastDay = ""
+        var summary = BalanceOfPaymentSummary()
+
+        // 日次・月次・年次
+        var lastTerm = ""
         // 日付ごとに金額合計して配列に格納
         results.forEach { result in
-            let nowDay = result.raceDay
-            daily.buyAmount = result.buyAmount
-            daily.getAmount = result.getAmount
-            if nowDay == lastDay {
+            var nowTerm = result.raceDay
+            if term == Enums.Term.monthly {
+                nowTerm = result.raceDay.substr(1, 6)
+            } else if term == Enums.Term.yearly {
+              // 未実装
+            }
+            
+            summary.buyAmount = result.buyAmount
+            summary.getAmount = result.getAmount
+            if nowTerm == lastTerm {
                 // 同一日だった場合は前回要素に対してSUMする
-                dailyList[lastDay]?.buyAmount += result.buyAmount
-                dailyList[lastDay]?.getAmount += result.getAmount
+                summaryList[lastTerm]?.buyAmount += result.buyAmount
+                summaryList[lastTerm]?.getAmount += result.getAmount
             } else {
-                dailyList[nowDay] = daily
-                lastDay = nowDay
+                summaryList[nowTerm] = summary
+                lastTerm = nowTerm
             }
         }
-        return dailyList
+        return summaryList
     }
     
-    /// 内部DBから対象データ取得
+    /// 検索データの詳細情報を取得
     /// - Parameters:
-    ///   - key: 検索するカラム
+    ///   - key: 検索対象カラム
     ///   - value: 検索対象の値
     func getBalanceOfPaymentDetail(key: String, value: String, sort: String = "") -> [BalanceOfPaymentDetail] {
         var detailList: [BalanceOfPaymentDetail] = []
@@ -90,4 +128,5 @@ class DatabaseManager {
         }
         return detailList
     }
+    
 }

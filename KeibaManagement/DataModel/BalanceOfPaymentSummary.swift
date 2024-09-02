@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BalanceOfPaymentDaily {
+struct BalanceOfPaymentSummary {
     var buyAmount: Int = 0
     var getAmount: Int = 0
 }

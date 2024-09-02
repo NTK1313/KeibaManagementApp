@@ -9,17 +9,21 @@ import SwiftUI
 import RealmSwift
 
 struct DailyListRow: View {
-
+    
     // MARK: - Properties
     let detail: BalanceOfPaymentDetail
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var summaryInfo: SummaryInfo
     @Binding var isDetailDisplay: Bool
-
+    
     @State private var showingAlert = false
-
+    @State private var isUpdate = false
+    @State private var buyAmount = 0
+    @State private var getAmount = 0
+    
     let realm = try! Realm()
     let dbManager = DatabaseManager()
-
+    //TODO: スワイプして削除できるようにする
+    
     var body: some View {
         VStack{
             HStack {
@@ -34,51 +38,84 @@ struct DailyListRow: View {
                 VStack{
                     HStack(spacing: 10){
                         Text("購入金額:")
-                        Text("¥\(detail.buyAmount)")
-                            .foregroundColor(.blue)
+                        if !isUpdate{
+                            Text("¥\(detail.buyAmount)")
+                                .foregroundColor(.blue)
+                        } else {
+                            TextField("", value: $buyAmount, format: .number)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.blue)
+                        }
                         Spacer()
                     }
                     HStack(spacing: 10){
                         Text("払戻金額:")
-                        Text("¥\(detail.getAmount)")
-                            .foregroundColor(.red)
+                        if !isUpdate {
+                            Text("¥\(detail.getAmount)")
+                                .foregroundColor(.red)
+                        } else {
+                            TextField("", value: $getAmount, format: .number)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .foregroundColor(.red)
+                        }
                         Spacer()
                     }
                 }
                 // 変更ボタン
+                // TODO: 変更ボタン押下したとき、「変更」→「保存」に「削除」→「戻る」に名前変更し、処理も変える
                 Button(action: {
-                    // TODO: 変更処理作成
-                    print("button pressed.")
+                    if self.isUpdate {
+                        // 「保存」ボタンの時の処理
+                        self.showingAlert = true
+                    } else {
+                        // 「変更」ボタンの時の処理
+                        print("変更ボタンが押下された")
+                        isUpdate.toggle()
+                        print("isUpdate:\(isUpdate)")
+                        buyAmount = detail.buyAmount
+                        getAmount = detail.getAmount
+                    }
                 }, label: {
-                    Text("変更")
+                    Text(!isUpdate ? "変更" : "保存")
                         .foregroundColor(.blue)
                 })
                 .buttonStyle(.bordered)
                 .tint(.blue)
                 // 削除ボタン
                 Button(action: {
-                    print("button pressed.")
-                    self.showingAlert = true
+                    if !self.isUpdate {
+                        // 「削除」ボタンの時の処理
+                        self.showingAlert = true
+                    } else {
+                        // 「戻る」ボタンの時の処理
+                        buyAmount = detail.buyAmount
+                        getAmount = detail.getAmount
+                        isUpdate.toggle()
+                    }
                 }, label: {
-                    Text("削除")
+                    Text(!isUpdate ? "削除" : "戻る")
                 })
                 .buttonStyle(.bordered)
                 .tint(.gray)
-                // TODO: 削除処理後はトースト表示してカレンダー画面に再度戻る
-                // TODO: カレンダー画面に戻った後はRealmDBから最新データを取得して一覧に反映させる。
-                .alert("以下のデータを削除します",isPresented: $showingAlert) {
+                .alert(!isUpdate ? "以下のデータを削除します" : "変更内容で保存しますか？" ,isPresented: $showingAlert) {
                     Button("OK"){
-                        let result = dbManager.deleteBalanceOfPayment(key: "raceID", value: detail.raceID)
+                        var result = Enums.RealmResultCode.noData.message
+                        if !self.isUpdate {
+                            result = dbManager.deleteBalanceOfPayment(key: "raceID", value: detail.raceID)
+                        } else {
+                            // データ更新処理
+                            var updateInfo = BalanceOfPaymentDetail()
+                            updateInfo.buyAmount = buyAmount
+                            updateInfo.getAmount = getAmount
+                            result = dbManager.updateBalanceOfPayment(key: "raceID", value: detail.raceID, updateInfo: updateInfo)
+                            self.isUpdate.toggle()
+                        }
                         switch result {
                         case Enums.RealmResultCode.success.message:
                             print("成功:\(detail.raceDay)")
-                            viewModel.raceDay = detail.raceDay
-                            // TODO: データ削除後、カレンダー画面まで戻らなくて良い場合は下記処理を削除する
-                            // TODO: その場合、戻るボタンを押した時に再度RealmDBから最新のデータをとってきて画面表示させるように修正する。
-                            // TODO: 削除更新した時にその目印となるフラグを持たせるか
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//                                isDetailDisplay.toggle()
-//                            }
+                            summaryInfo.raceDay = detail.raceDay
                         case Enums.RealmResultCode.failure.message:
                             print("失敗")
                         case Enums.RealmResultCode.noData.message:
@@ -90,7 +127,9 @@ struct DailyListRow: View {
                     // キャンセル時は何もしない
                     Button("キャンセル"){}
                 } message: {
-                    Text("\(detail.racePlace) \(detail.raceNumber) \(detail.name)\n \(detail.type) \(detail.distance)m")
+                    Text(!isUpdate ? 
+                         "\(detail.racePlace) \(detail.raceNumber) \(detail.name)\n \(detail.type) \(detail.distance)m" :
+                            "\(detail.racePlace) \(detail.raceNumber) \(detail.name)\n \(detail.type) \(detail.distance)m \n 購入金額: ¥\(buyAmount) \n 払戻金額: ¥\(getAmount)")
                 }
             }
         }
@@ -107,7 +146,7 @@ struct DailyListRow: View {
     detail.distance = 2000
     detail.buyAmount = 200
     detail.getAmount = 29000
-    let viewModel: ViewModel = ViewModel()
+    let summaryInfo: SummaryInfo = SummaryInfo()
     @State var isDetailDisplay = false
     return DailyListRow(detail: detail, isDetailDisplay: $isDetailDisplay)
 }

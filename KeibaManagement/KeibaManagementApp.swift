@@ -9,31 +9,33 @@ import SwiftUI
 import SwiftData
 import RealmSwift
 import UIKit
+import IQKeyboardManager
 
 @main
 struct KeibaManagementApp: SwiftUI.App {
+    // TODO: 登録画面において、TopViewで未表示（=未スクロール）の月のデータを登録した場合、登録後にクラッシュする事象あり。（解決策検討）
     // AppDelegateの処理を実行する
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject var viewModel = ViewModel()
-
+    @StateObject var summaryInfo = SummaryInfo()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
+        
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
     var body: some Scene {
         WindowGroup {
-            TopCalenderView(selectedDate: Date().convertDateToString(format: Consts.DateFormatter.yyyymmdd_hyphen))
-                .environmentObject(viewModel)
+            TopCalenderView(selectedDate: Date().convertDateToString(format: Consts.DateFormatter.yyyyMMdd))
+                .environmentObject(summaryInfo)
         }
         .modelContainer(sharedModelContainer)
     }
@@ -41,14 +43,86 @@ struct KeibaManagementApp: SwiftUI.App {
 // MARK: - AppDelegate設定
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
-        // この間に AppDelegate.swift の処理を書く。今回は書いてない
         print("AppDelegate start")
         // Reamlの保存先
         print("Realm保存先: \(Realm.Configuration.defaultConfiguration.fileURL!)")
         // Realm設定
-        let _ = try! Realm()
+        let realm = try! Realm()
+        
+        // データ登録チェック
+        let results = realm.objects(RaceInfo.self)
+        
+        // TODO: 検証のために必ずデータ削除→インポートする
+        try! realm.write {
+            realm.delete(results)
+        }
+        
+        if results.count == 0 {
+            // 初期データをRealmにインポート
+            print("初期データが登録されていません。")
+            importCsvData()
+        }
+        // キーボード
+        IQKeyboardManager.shared().isEnabled = true
         return true
+    }
+    
+    func importCsvData() {
+        print("importCsvData")
+        //csvファイルを格納するための配列を作成
+        var csvArray:[String] = []
+        //csvファイルの読み込み
+        let csvBundle = Bundle.main.path(forResource: "test", ofType: "csv")
+        if let safeCsvBundle = csvBundle {
+            do {
+                print(safeCsvBundle)
+                //csvBundleのパスを読み込み、UTF8に文字コード変換して、NSStringに格納
+                let tsvData = try String(contentsOfFile: safeCsvBundle,
+                                         encoding: String.Encoding.utf8)
+                //改行コードが\n一つになるようにします
+                var lineChange = tsvData.replacingOccurrences(of: "\r", with: "\n")
+                lineChange = lineChange.replacingOccurrences(of: "\n\n", with: "\n")
+                //"\n"の改行コードで区切って、配列csvArrayに格納する
+                csvArray = lineChange.components(separatedBy: "\n")
+                
+                var i = 0
+                // TODO: 分ける
+                for csvStr in csvArray {
+                    // 1行目はヘッダ行のためSKIP
+                    let splitStr = csvStr.components(separatedBy: ",")
+                    if i > 0 && splitStr[0] != "" {
+                        let raceInfo = RaceInfo()
+                        raceInfo.raceID = splitStr[0]
+                        raceInfo.raceDay = splitStr[1]
+                        raceInfo.raceClass = splitStr[2]
+                        raceInfo.racePlace = splitStr[3]
+                        raceInfo.raceNumber = splitStr[4]
+                        raceInfo.name = splitStr[5]
+                        raceInfo.type = splitStr[6]
+//                        print("調査用:\(splitStr[7])")
+                        if splitStr[7] == nil {
+                            print("nil発生!:\(splitStr[7])")
+                        }
+                        raceInfo.distance = Int(splitStr[7])!
+                        // 保存
+                        let realm = try! Realm()
+                        do {
+                            try realm.write {
+                                realm.add(raceInfo)
+                            }
+                        } catch {
+                            print("Import Error:\(error)")
+                        }
+                    }
+                    i += 1
+                }
+            } catch {
+                print("Error:\(error)")
+            }
+        } else {
+            print("ERROR: csv file is nil.")
+        }
+        
     }
 }
 

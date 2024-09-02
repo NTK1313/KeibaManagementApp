@@ -20,7 +20,6 @@ class RegisterViewInfo: ObservableObject {
     
     @Published var showingAlert = false
     @Published var isRegisted = false
-    @Published var buttonDisable = false
     @Published var isRaceNameError = false
     @Published var isDistanceError = false
     @Published var isBuyAmounterror = false
