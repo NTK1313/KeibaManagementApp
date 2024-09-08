@@ -118,4 +118,17 @@ class Enums {
              monthly,
              yearly
     }
+    
+    // JRA・地方重賞一覧URL
+    enum JraLocalListURL {
+        case jra,
+             local
+
+        var url: String {
+            switch self {
+            case .jra: return "https://www.jra.go.jp/datafile/seiseki/replay/{year}/jyusyo.html"
+            case .local: return "https://www.keiba.go.jp/gradedrace/schedule_{year}.html"
+            }
+        }
+    }
 }

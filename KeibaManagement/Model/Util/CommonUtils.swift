@@ -53,7 +53,7 @@ class CommonUtils {
         return attributedText
     }
     
-    /// Enum（RacePlace）の特定
+    /// Enum（RacePlace）取得
     func getRacePlaceEnum(_ place: String) -> Enums.RacePlace {
         switch place {
         case Consts.RacePlace.JRA.tokyo: return Enums.RacePlace.tokyo

@@ -102,6 +102,8 @@ struct RegisterView: View {
                         }
                         TextField("日本ダービー", text: self.$registerViewInfo.raceName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal,18)
+                            .lineLimit(2...4)
                     }
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     
@@ -196,18 +198,8 @@ struct RegisterView: View {
                             }
                             
                         } label: {
-                            // TODO: 枠でボタン囲う（サイズとボタン範囲検討）
                             Text("登録")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                                // フォントの色
-                                .foregroundColor(Color.white)
-                                // 幅を画面いっぱい、高さも指定（maxWidthを使っている場合、heightだと指定できない）
-                                .frame(maxWidth: .infinity, minHeight: 48)
-                                // ボタンの色
-                                .background(Color.blue)
-                                // 両端にpaddingをかける
-                                .padding(.horizontal, 32)
+                                .customButtonLayout()
                         }
                         .alert("同一レースが既に登録されています。",isPresented: $registerViewInfo.isRegisted) {
                             Button("OK"){}
@@ -221,8 +213,8 @@ struct RegisterView: View {
                     CommonToast(title: "登録完了", isShown: $isToastViewDisplay)
                 }
             }
-            .toolbarBackground(.orange, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            // ナビゲーションバー設定
+            .customNavigationBar(title: "登録")
             
         }
     }
@@ -284,10 +276,10 @@ struct RegisterView: View {
     }
 }
 
-#Preview {
-    let date = Date()
-    @State var isRegisterViewDisplay = false
-    //    @EnvironmentObject var summaryInfo : SummaryInfo
-    return RegisterView(selectedDate: date, isRegisterViewDisplay: $isRegisterViewDisplay)
-}
+//#Preview {
+//    let date = Date()
+//    @State var isRegisterViewDisplay = false
+//    //    @EnvironmentObject var summaryInfo : SummaryInfo
+//    return RegisterView(selectedDate: date, isRegisterViewDisplay: $isRegisterViewDisplay)
+//}
 

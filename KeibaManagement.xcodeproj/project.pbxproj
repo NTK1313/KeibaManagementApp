@@ -8,12 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		20743A4206B83B1BFDD20C62 /* Pods_KeibaManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */; };
-		5C9AA2AA2C7091A9007EE437 /* test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5C9AA2A92C7091A9007EE437 /* test.csv */; };
+		5C9AA2AA2C7091A9007EE437 /* raceInfo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5C9AA2A92C7091A9007EE437 /* raceInfo.csv */; };
 		5CBAF56F2C2E2D0800118A1A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */; };
 		5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5702C2FFB1700118A1A /* Consts.swift */; };
 		5CBAF5772C30EED800118A1A /* RaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5762C30EED800118A1A /* RaceInfo.swift */; };
 		5CBAF5792C38C33900118A1A /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5782C38C33900118A1A /* CommonUtils.swift */; };
 		5CBB48E42C81429000607431 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48E32C81428F00607431 /* Documentation.docc */; };
+		5CBB48E82C85BE7400607431 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48E72C85BE7400607431 /* SideMenuView.swift */; };
+		5CBB48EA2C8BDC5400607431 /* ExternalLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48E92C8BDC5400607431 /* ExternalLinkView.swift */; };
+		5CBB48EC2C8BDCA300607431 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48EB2C8BDCA300607431 /* WebView.swift */; };
+		5CBB48EF2C8BE3D900607431 /* OldGradeRaceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48EE2C8BE3D900607431 /* OldGradeRaceSearchView.swift */; };
+		5CBB48F12C8BF0C000607431 /* OldGradeRaceSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48F02C8BF0C000607431 /* OldGradeRaceSearchModel.swift */; };
+		5CBB48F52C8C196900607431 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48F42C8C196900607431 /* View+Extension.swift */; };
+		5CBB48F72C8C278F00607431 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48F62C8C278F00607431 /* ReportView.swift */; };
+		5CBB48F92C8C2E2D00607431 /* ReportDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48F82C8C2E2D00607431 /* ReportDetailRow.swift */; };
+		5CBB48FB2C8E66E400607431 /* ReportGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBB48FA2C8E66E400607431 /* ReportGraphView.swift */; };
 		5CBDA8D92C3B5F560018B19A /* PickerViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */; };
 		5CBDA8DB2C3CA92F0018B19A /* BalanceOfPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDA8DA2C3CA92F0018B19A /* BalanceOfPayment.swift */; };
 		5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */; };
@@ -39,12 +48,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C9AA2A92C7091A9007EE437 /* test.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = test.csv; path = "KeibaManagement/Supporting Files/test.csv"; sourceTree = "<group>"; };
+		5C9AA2A92C7091A9007EE437 /* raceInfo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = raceInfo.csv; path = "KeibaManagement/Supporting Files/raceInfo.csv"; sourceTree = "<group>"; };
 		5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		5CBAF5702C2FFB1700118A1A /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		5CBAF5762C30EED800118A1A /* RaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfo.swift; sourceTree = "<group>"; };
 		5CBAF5782C38C33900118A1A /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		5CBB48E32C81428F00607431 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		5CBB48E72C85BE7400607431 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		5CBB48E92C8BDC5400607431 /* ExternalLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkView.swift; sourceTree = "<group>"; };
+		5CBB48EB2C8BDCA300607431 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		5CBB48EE2C8BE3D900607431 /* OldGradeRaceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldGradeRaceSearchView.swift; sourceTree = "<group>"; };
+		5CBB48F02C8BF0C000607431 /* OldGradeRaceSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldGradeRaceSearchModel.swift; sourceTree = "<group>"; };
+		5CBB48F42C8C196900607431 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		5CBB48F62C8C278F00607431 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		5CBB48F82C8C2E2D00607431 /* ReportDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailRow.swift; sourceTree = "<group>"; };
+		5CBB48FA2C8E66E400607431 /* ReportGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGraphView.swift; sourceTree = "<group>"; };
 		5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewStyle.swift; sourceTree = "<group>"; };
 		5CBDA8DA2C3CA92F0018B19A /* BalanceOfPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceOfPayment.swift; sourceTree = "<group>"; };
 		5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToast.swift; sourceTree = "<group>"; };
@@ -105,13 +123,22 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		5CBDA8D72C3B5F390018B19A /* components */ = {
+		5CBB48ED2C8BE1C300607431 /* ExternalLink */ = {
+			isa = PBXGroup;
+			children = (
+				5CBB48E92C8BDC5400607431 /* ExternalLinkView.swift */,
+				5CBB48EB2C8BDCA300607431 /* WebView.swift */,
+			);
+			path = ExternalLink;
+			sourceTree = "<group>";
+		};
+		5CBDA8D72C3B5F390018B19A /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				5CBDA8D82C3B5F560018B19A /* PickerViewStyle.swift */,
 				5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */,
 			);
-			path = components;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		5CBFC2C62C674C8F00DAD8F9 /* Util */ = {
@@ -129,6 +156,7 @@
 				5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */,
 				5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */,
 				5CBFC2EE2C6B03C400DAD8F9 /* String+Extension.swift */,
+				5CBB48F42C8C196900607431 /* View+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -137,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBB48E32C81428F00607431 /* Documentation.docc */,
-				5C9AA2A92C7091A9007EE437 /* test.csv */,
+				5C9AA2A92C7091A9007EE437 /* raceInfo.csv */,
 				5CD1716E2C2B737E00E1FCC1 /* KeibaManagement */,
 				5CD1716D2C2B737E00E1FCC1 /* Products */,
 				6CEB0982B92244BCB2509BFB /* Pods */,
@@ -179,14 +207,20 @@
 		5CD171832C2B767200E1FCC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDA8D72C3B5F390018B19A /* Components */,
+				5CBB48ED2C8BE1C300607431 /* ExternalLink */,
 				5CD171712C2B737E00E1FCC1 /* ContentView.swift */,
 				5CBFC2E62C674F2F00DAD8F9 /* Item.swift */,
 				5CD1717F2C2B763600E1FCC1 /* FirstView.swift */,
 				5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */,
 				5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */,
+				5CBB48E72C85BE7400607431 /* SideMenuView.swift */,
+				5CBB48EE2C8BE3D900607431 /* OldGradeRaceSearchView.swift */,
 				5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */,
 				5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */,
-				5CBDA8D72C3B5F390018B19A /* components */,
+				5CBB48F62C8C278F00607431 /* ReportView.swift */,
+				5CBB48FA2C8E66E400607431 /* ReportGraphView.swift */,
+				5CBB48F82C8C2E2D00607431 /* ReportDetailRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,9 +228,10 @@
 		5CD171842C2B770D00E1FCC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5CD171892C2B798500E1FCC1 /* CalenderView.swift */,
 				5CBFC2C72C674CA800DAD8F9 /* Extension */,
 				5CBFC2C62C674C8F00DAD8F9 /* Util */,
+				5CD171892C2B798500E1FCC1 /* CalenderView.swift */,
+				5CBB48F02C8BF0C000607431 /* OldGradeRaceSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,7 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C9AA2AA2C7091A9007EE437 /* test.csv in Resources */,
+				5C9AA2AA2C7091A9007EE437 /* raceInfo.csv in Resources */,
 				5CD171792C2B737F00E1FCC1 /* Preview Assets.xcassets in Resources */,
 				5CD171762C2B737F00E1FCC1 /* Assets.xcassets in Resources */,
 			);
@@ -344,21 +379,30 @@
 			files = (
 				5CBFC2E92C67592500DAD8F9 /* DatabaseManager.swift in Sources */,
 				5CBDA8D92C3B5F560018B19A /* PickerViewStyle.swift in Sources */,
+				5CBB48F72C8C278F00607431 /* ReportView.swift in Sources */,
 				5CD171722C2B737E00E1FCC1 /* ContentView.swift in Sources */,
 				5CBB48E42C81429000607431 /* Documentation.docc in Sources */,
+				5CBB48F12C8BF0C000607431 /* OldGradeRaceSearchModel.swift in Sources */,
 				5CD3700E2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift in Sources */,
 				5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */,
+				5CBB48EA2C8BDC5400607431 /* ExternalLinkView.swift in Sources */,
 				5CD171802C2B763600E1FCC1 /* FirstView.swift in Sources */,
 				5CD1718A2C2B798500E1FCC1 /* CalenderView.swift in Sources */,
 				5CD171862C2B772900E1FCC1 /* TopCalenderView.swift in Sources */,
+				5CBB48EF2C8BE3D900607431 /* OldGradeRaceSearchView.swift in Sources */,
+				5CBB48FB2C8E66E400607431 /* ReportGraphView.swift in Sources */,
 				5CBAF5772C30EED800118A1A /* RaceInfo.swift in Sources */,
 				5CD370102C6C45B500EA1F82 /* Enums.swift in Sources */,
 				5CBAF5792C38C33900118A1A /* CommonUtils.swift in Sources */,
+				5CBB48EC2C8BDCA300607431 /* WebView.swift in Sources */,
 				5CD3700B2C6C31F800EA1F82 /* DailyListRow.swift in Sources */,
 				5CBFC2EB2C67616B00DAD8F9 /* Dictionary+Extension.swift in Sources */,
 				5CD370122C6ED9B600EA1F82 /* RegisterViewInfo.swift in Sources */,
 				5CBFC2ED2C6AD84E00DAD8F9 /* SummaryInfo.swift in Sources */,
+				5CBB48F52C8C196900607431 /* View+Extension.swift in Sources */,
+				5CBB48E82C85BE7400607431 /* SideMenuView.swift in Sources */,
 				5CBFC2C92C674CBC00DAD8F9 /* Date+Extension.swift in Sources */,
+				5CBB48F92C8C2E2D00607431 /* ReportDetailRow.swift in Sources */,
 				5CBFC2C52C5DB0D100DAD8F9 /* BalanceOfPaymentSummary.swift in Sources */,
 				5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */,
 				5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */,

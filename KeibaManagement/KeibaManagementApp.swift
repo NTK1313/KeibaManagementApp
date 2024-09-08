@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let results = realm.objects(RaceInfo.self)
         
         // TODO: 検証のために必ずデータ削除→インポートする
-        try! realm.write {
-            realm.delete(results)
-        }
+//        try! realm.write {
+//            realm.delete(results)
+//        }
         
         if results.count == 0 {
             // 初期データをRealmにインポート
@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //csvファイルを格納するための配列を作成
         var csvArray:[String] = []
         //csvファイルの読み込み
-        let csvBundle = Bundle.main.path(forResource: "test", ofType: "csv")
+        let csvBundle = Bundle.main.path(forResource: "raceInfo", ofType: "csv")
         if let safeCsvBundle = csvBundle {
             do {
                 print(safeCsvBundle)
@@ -99,10 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         raceInfo.raceNumber = splitStr[4]
                         raceInfo.name = splitStr[5]
                         raceInfo.type = splitStr[6]
-//                        print("調査用:\(splitStr[7])")
-                        if splitStr[7] == nil {
-                            print("nil発生!:\(splitStr[7])")
-                        }
                         raceInfo.distance = Int(splitStr[7])!
                         // 保存
                         let realm = try! Realm()

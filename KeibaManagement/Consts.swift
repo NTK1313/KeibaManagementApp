@@ -15,6 +15,9 @@ struct Consts {
     static let races = ["1R","2R","3R","4R","5R","6R","7R","8R","9R","10R","11R","12R"]
     static let types = ["芝","ダート","障害"]
     
+    static let placeKbns = ["JRA","地方"]
+    static let oldFiveYears = ["2024","2023","2022","2021","2020"]
+
     struct DateFormatter {
         static let yyyyMM = "yyyyMM"
         static let yyyyMMdd = "yyyyMMdd"

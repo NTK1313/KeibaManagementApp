@@ -50,9 +50,9 @@ struct DailyListView: View {
 }
 
 
-#Preview {
-    @State var isDailyListViewDisplay = false
-    // TODO: プレビュー表示できるようにMockを作成する
-    let summaryInfo: SummaryInfo = SummaryInfo()
-    return DailyListView(isDailyListViewDisplay: $isDailyListViewDisplay, date: "2024-08-12", buyAmount: 1000, getAmount: 20000)
-}
+//#Preview {
+//    @State var isDailyListViewDisplay = false
+//    // TODO: プレビュー表示できるようにMockを作成する
+//    let summaryInfo: SummaryInfo = SummaryInfo()
+//    return DailyListView(isDailyListViewDisplay: $isDailyListViewDisplay, date: "2024-08-12", buyAmount: 1000, getAmount: 20000)
+//}
