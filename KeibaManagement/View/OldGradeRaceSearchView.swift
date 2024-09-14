@@ -10,7 +10,7 @@ import SwiftUI
 struct OldGradeRaceSearchView: View {
 
     @State var place: String = Consts.placeKbns[0]
-    @State var selectYear: String = Consts.oldFiveYears[0]
+    @State var selectYear: String = Consts.lastFiveYears[0]
 
     @State private var toLinkView = false // このフラグで画面遷移を制御
     
@@ -25,7 +25,7 @@ struct OldGradeRaceSearchView: View {
                 PickerViewStyle(value:$place, text: "placeKbns", list: Consts.placeKbns)
                     .padding(.leading,30)
                 
-                PickerViewStyle(value:$selectYear, text: "oldFiveYears", list: Consts.oldFiveYears)
+                PickerViewStyle(value:$selectYear, text: "oldFiveYears", list: Consts.lastFiveYears)
             }
             
             NavigationLink {

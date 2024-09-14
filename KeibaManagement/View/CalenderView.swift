@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import UIKit
-import RealmSwift
 
 struct CalendarView: UIViewRepresentable {
     // @Binding 親子関係にあるView内のStateプロパティ(状態変数)のデータを共有。
@@ -19,7 +18,6 @@ struct CalendarView: UIViewRepresentable {
     // TODO: プロパティをSummaryInfoにまとめる
     @ObservedObject var summaryInfo: SummaryInfo
 
-    let realm = try! Realm()
     let dbManager = DatabaseManager()
     
     func makeCoordinator() -> Coordinator {

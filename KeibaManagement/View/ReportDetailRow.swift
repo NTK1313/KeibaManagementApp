@@ -8,35 +8,32 @@
 import SwiftUI
 
 struct ReportDetailRow: View {
+    
     let yyyymm: String
+    let summary: BalanceOfPaymentSummary
+    
     
     var body: some View {
-        // スマホ画面の高さ・幅を取得
-        let bounds = UIScreen.main.bounds
-        let width = Int(bounds.width)
         HStack {
-            Text("\(yyyymm)")
-                
+            Text("\(yyyymm.substr(1, 4))年\(yyyymm.substr(5, 6))月")
             VStack {
                 HStack(spacing: 10) {
                     Text("購入金額：¥")
+                    Text("\(summary.buyAmount)")
                     // 行数が2行にならないように自動的に文字サイズ調整
                         .lineLimit(1)
                         .minimumScaleFactor(0.1)
-                    Text("10,000,000")
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.1)
                         .foregroundColor(.blue)
+                    Spacer()
                 }
                 HStack(spacing: 10) {
                     Text("払戻金額：¥")
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.1)
-                    Text("10,000,000")
+                    Text("\(summary.getAmount)")
                         .foregroundColor(.red)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.1)                }
-//                .padding(.leading,CGFloat(width / 20))
+                        .minimumScaleFactor(0.1)
+                    Spacer()
+                }
             }
         }
 
@@ -44,5 +41,8 @@ struct ReportDetailRow: View {
 }
 
 #Preview {
-    ReportDetailRow(yyyymm: "2024年06月")
+    var summary = BalanceOfPaymentSummary()
+    summary.buyAmount = 800
+    summary.getAmount = 250000000
+    return ReportDetailRow(yyyymm: "202409", summary: summary)
 }

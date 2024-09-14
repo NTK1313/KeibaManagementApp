@@ -16,11 +16,17 @@ struct Consts {
     static let types = ["芝","ダート","障害"]
     
     static let placeKbns = ["JRA","地方"]
-    static let oldFiveYears = ["2024","2023","2022","2021","2020"]
+    // TODO: 計算式で過去5年を出せるようにする
+    static let lastFiveYears = ["2024","2023","2022","2021","2020"]
 
     struct DateFormatter {
         static let yyyyMM = "yyyyMM"
         static let yyyyMMdd = "yyyyMMdd"
+    }
+    
+    struct TransactionType {
+        static let buy = "buy"
+        static let get = "get"
     }
     
     struct RacePlace {

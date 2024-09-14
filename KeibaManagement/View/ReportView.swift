@@ -6,41 +6,56 @@
 //
 
 import SwiftUI
+import OrderedCollections
 
 struct ReportView: View {
     let commonUtils = CommonUtils()
+    
+    @State var isDisplay = false
+    @State var selectedYear = Consts.lastFiveYears[0]
+    
+    var monthlySummaryList:OrderedDictionary<String, BalanceOfPaymentSummary> = [:]
+
+    // 初期化
+    init() {
+        let reportModel = ReportModel()
+        monthlySummaryList = reportModel.getTargetYearData(selectedYear)
+    }
+    
     var body: some View {
         /**
-         デフォルト表示で当年の年間収支＋各月の月間収支表示         グラフ表示のボタン押下したら最上部にグラフ表示
+         デフォルト表示で当年の年間収支＋各月の月間収支表示         
+         グラフ表示のボタン押下したら最上部にグラフ表示
          その際に月間収支の表は下部にスライド
          */
         VStack {
             HStack {
-                Text("2024")
-
+                PickerViewStyle(value:$selectedYear, text: "lastFiveYears", list: Consts.lastFiveYears)
+                
                 Button(action: {
                     print("レポート出力")
                 }, label: {
                     Text("検索")
                 })
-
+                
                 Button(action: {
-                    print("グラフ表示")
+                    isDisplay.toggle()
                 }, label: {
-                    Text("グラフを表示")
+                    Text(isDisplay ? "グラフ非表示" : "グラフ表示")
                 })
+            }
+            if isDisplay {
+                ReportGraphView(monthlySummaryList: monthlySummaryList)
             }
             // 各月の収支一覧
             List{
                 // 12ヶ月分を表示
-                ForEach(1..<13,id: \.self) { i in
-                    ReportDetailRow(yyyymm: "2024年\(commonUtils.leftZeroPadding(String(i)))月")
+                ForEach(0..<12,id: \.self) { i in
+                    ReportDetailRow(yyyymm: Array(monthlySummaryList.keys)[i], summary: Array(monthlySummaryList.values)[i])
                 }
             }
         }
-        
-      
-            .customNavigationBar(title: "レポート収支")
+        .customNavigationBar(title: "レポート収支")
     }
 }
 

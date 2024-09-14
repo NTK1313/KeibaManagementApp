@@ -6,13 +6,47 @@
 //
 
 import SwiftUI
+import Charts
+import OrderedCollections
 
 struct ReportGraphView: View {
+    
+    var monthlySummaryList: OrderedDictionary<String, BalanceOfPaymentSummary>
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let reportModel = ReportModel()
+        let graphInfo = reportModel.createGraph(summaryList: monthlySummaryList, term: Enums.Term.monthly)
+        /// ✅Chart自身にデータ群を渡すパターン
+        Chart(graphInfo) { dataRow in
+            BarMark(
+                x: .value("Name", dataRow.period),
+                y: .value("Value", dataRow.amount)
+            )
+            .foregroundStyle(dataRow.color)
+            .position(by: .value("Category", dataRow.transactionType))
+            
+        }
+        .frame(height: 300)
+        .background(.gray.opacity(0.1))
     }
 }
 
 #Preview {
-    ReportGraphView()
+    var list:OrderedDictionary<String, BalanceOfPaymentSummary> = [:]
+    var bop = BalanceOfPaymentSummary()
+    bop.buyAmount = 100
+    bop.getAmount = 2000
+    list.updateValue(bop, forKey: "202401")
+    list.updateValue(bop, forKey: "202402")
+    list.updateValue(bop, forKey: "202403")
+    list.updateValue(bop, forKey: "202404")
+    list.updateValue(bop, forKey: "202405")
+    list.updateValue(bop, forKey: "202406")
+    list.updateValue(bop, forKey: "202407")
+    list.updateValue(bop, forKey: "202408")
+    list.updateValue(bop, forKey: "202409")
+    list.updateValue(bop, forKey: "202410")
+    list.updateValue(bop, forKey: "202411")
+    list.updateValue(bop, forKey: "202412")
+    return ReportGraphView(monthlySummaryList: list)
 }

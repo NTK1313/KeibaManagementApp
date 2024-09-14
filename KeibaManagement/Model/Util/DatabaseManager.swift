@@ -81,6 +81,7 @@ class DatabaseManager {
         // 日次・月次・年次
         var lastTerm = ""
         // 日付ごとに金額合計して配列に格納
+        // TODO: reduceで集約する形に書き換える
         results.forEach { result in
             var nowTerm = result.raceDay
             if term == Enums.Term.monthly {

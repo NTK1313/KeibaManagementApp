@@ -18,7 +18,6 @@ struct RegisterView: View {
     @State private var isToastViewDisplay = false
     @State private var buttonDisable = false
     
-    // テキストフィールドをタップした時にキーボードを表出
     // TODO: テキストフィールド選択時にキーボードを出す
     @FocusState private var focusedField: Field?
     
@@ -103,7 +102,6 @@ struct RegisterView: View {
                         TextField("日本ダービー", text: self.$registerViewInfo.raceName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.horizontal,18)
-                            .lineLimit(2...4)
                     }
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     
@@ -179,6 +177,7 @@ struct RegisterView: View {
                                     summaryInfo.raceDay = dateToString(selectedDate)
                                     // 登録成功のトースト表示
                                     isToastViewDisplay = true
+                                    // TODO: ナビゲーションバーの「Back」ボタンも押せないようにする（トースト表示中にBackボタンを押下すると挙動がおかしくなる）
                                     // ダイアログを表出し2秒後にカレンダー画面に戻る
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                                         print("buttonDisable:\(buttonDisable)")
