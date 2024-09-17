@@ -27,17 +27,17 @@ extension View {
     
     /// ボタンオブジェクト共通化
     @ViewBuilder
-    func customButtonLayout() -> some View {
+    func customButtonLayout(fontsize: CGFloat, isDisabled: Bool = false) -> some View {
         // TODO: 枠でボタン囲う（サイズとボタン範囲検討）
         self
             .fontWeight(.bold)
-            .font(.system(size: 20))
+            .font(.system(size: fontsize))
         // フォントの色
             .foregroundColor(Color.white)
         // 幅を画面いっぱい、高さも指定（maxWidthを使っている場合、heightだと指定できない）
-            .frame(maxWidth: .infinity, minHeight: 48)
+            .frame(maxWidth: .infinity, minHeight: 20)
         // ボタンの色
-            .background(Color.blue)
+            .background(isDisabled ? Color.gray : Color.blue)
         // 両端にpaddingをかける
             .padding(.horizontal, 32)
     }

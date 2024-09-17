@@ -12,7 +12,6 @@ struct CommonToast: View {
     @Binding var isShown: Bool
     var body: some View {
         VStack{
-            Spacer()
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
@@ -29,7 +28,7 @@ struct CommonToast: View {
         }
         .onAppear{
             withAnimation {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 ){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0 ){
                     self.isShown = false
                 }
             }

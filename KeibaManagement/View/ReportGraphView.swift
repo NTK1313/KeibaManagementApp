@@ -34,18 +34,26 @@ struct ReportGraphView: View {
 #Preview {
     var list:OrderedDictionary<String, BalanceOfPaymentSummary> = [:]
     var bop = BalanceOfPaymentSummary()
-    bop.buyAmount = 100
+    bop.buyAmount = 1000
     bop.getAmount = 2000
     list.updateValue(bop, forKey: "202401")
+    bop.buyAmount = 4000
+    bop.getAmount = 0
     list.updateValue(bop, forKey: "202402")
     list.updateValue(bop, forKey: "202403")
     list.updateValue(bop, forKey: "202404")
+    bop.buyAmount = 1000
+    bop.getAmount = 25000
     list.updateValue(bop, forKey: "202405")
     list.updateValue(bop, forKey: "202406")
     list.updateValue(bop, forKey: "202407")
     list.updateValue(bop, forKey: "202408")
+    bop.buyAmount = 3000
+    bop.getAmount = 12000
     list.updateValue(bop, forKey: "202409")
     list.updateValue(bop, forKey: "202410")
+    bop.buyAmount = 20000
+    bop.getAmount = 12000
     list.updateValue(bop, forKey: "202411")
     list.updateValue(bop, forKey: "202412")
     return ReportGraphView(monthlySummaryList: list)

@@ -6,10 +6,10 @@ target 'KeibaManagement' do
 
   # Pods for KeibaManagement
   pod 'RealmSwift', '~>10'
-  pod 'IQKeyboardManager', '>= 6.5.0'
   pod 'OrderedCollections'
 
 end
+
 post_install do |installer|
   installer.generated_projects.each do |project|
     project.targets.each do |target|

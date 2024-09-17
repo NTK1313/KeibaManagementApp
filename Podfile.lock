@@ -1,5 +1,4 @@
 PODS:
-  - IQKeyboardManager (6.5.19)
   - OrderedCollections (1.0.4)
   - Realm (10.53.1):
     - Realm/Headers (= 10.53.1)
@@ -8,23 +7,20 @@ PODS:
     - Realm (= 10.53.1)
 
 DEPENDENCIES:
-  - IQKeyboardManager (>= 6.5.0)
   - OrderedCollections
   - RealmSwift (~> 10)
 
 SPEC REPOS:
   trunk:
-    - IQKeyboardManager
     - OrderedCollections
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
-  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   OrderedCollections: c754ce5f9e42cf22b73afd73582317347903ab6d
   Realm: 82e4ea18703bf240dd443b5ceef68d6f9454ec49
   RealmSwift: 79a910911b6a5663b7570517c8237e3dbd2b0783
 
-PODFILE CHECKSUM: 1b2a25e803d20a2ec46f12f0fff51e85dc0b27ae
+PODFILE CHECKSUM: b00786dad0497b5caefff712ae0e0b9e3cf4b863
 
 COCOAPODS: 1.15.2

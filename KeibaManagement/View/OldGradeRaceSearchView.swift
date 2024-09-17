@@ -23,16 +23,17 @@ struct OldGradeRaceSearchView: View {
             
             HStack(spacing: 0) {
                 PickerViewStyle(value:$place, text: "placeKbns", list: Consts.placeKbns)
-                    .padding(.leading,30)
+                    .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
                 
                 PickerViewStyle(value:$selectYear, text: "oldFiveYears", list: Consts.lastFiveYears)
+                    .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
             }
             
             NavigationLink {
                 ExternalLinkView(url: "\(model.getURL(place: place, year: selectYear))")
             } label: {
                 Text("検索")
-                    .customButtonLayout()
+                    .customButtonLayout(fontsize: 20)
             }
             Spacer()
         }

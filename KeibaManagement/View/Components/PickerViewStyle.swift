@@ -19,7 +19,13 @@ struct PickerViewStyle : View {
             }
         })
         .pickerStyle(.menu)
-        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+        .frame(alignment: .leading)
+        .border(Color.cyan, width: 1)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(.cyan, lineWidth: 2)
+        )
     }
 }
 

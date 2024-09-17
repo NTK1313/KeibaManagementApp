@@ -18,9 +18,6 @@ struct RegisterView: View {
     @State private var isToastViewDisplay = false
     @State private var buttonDisable = false
     
-    // TODO: テキストフィールド選択時にキーボードを出す
-    @FocusState private var focusedField: Field?
-    
     let realm = try! Realm()
     let commonUtils = CommonUtils()
     
@@ -32,10 +29,14 @@ struct RegisterView: View {
     
     // MARK: - View
     var body: some View {
-        Spacer()
         ScrollView {
             ZStack {
-                VStack(spacing: 1){
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    }
+                VStack(spacing: 1) {
                     DatePicker (
                         "日付",
                         selection: $selectedDate,
@@ -47,14 +48,13 @@ struct RegisterView: View {
                     HStack{
                         Text("場名")
                         PickerViewStyle(value:$registerViewInfo.selectedPlace, text: "places", list: Consts.places)
-                        Spacer()
                         Text("レース")
                         PickerViewStyle(value:$registerViewInfo.selectedRace, text: "races", list: Consts.races)
                     }
-                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16))
                     
                     HStack{
-                        Button("レース検索") {
+                        Button {
                             print("検索情報：\(dateToString(selectedDate)):\(registerViewInfo.selectedPlace):\(registerViewInfo.selectedClass):\(registerViewInfo.selectedRace)")
                             let raceID = commonUtils.getRaceID(targetDate: dateToString(selectedDate),place: registerViewInfo.selectedPlace, race: registerViewInfo.selectedRace)
                             // Realmからデータ取得
@@ -74,6 +74,9 @@ struct RegisterView: View {
                             } else {
                                 self.registerViewInfo.showingAlert = true
                             }
+                        } label: {
+                            Text("レース検索")
+                                .customButtonLayout(fontsize: 14, isDisabled: buttonDisable)
                         }
                         .disabled(buttonDisable)
                         .alert("検索結果がありません。",isPresented: $registerViewInfo.showingAlert) {
@@ -81,17 +84,18 @@ struct RegisterView: View {
                         } message: {
                             Text("検索内容を変更してください。\n※検索できるは中央競馬のレースのみです。")
                         }
-                        Text("※中央競馬のみ検索可能")
-                            .font(.system(size: 15))
                     }
-                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
+                    Text("※中央競馬のみ検索可能")
+                        .font(.system(size: 15))
+                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
                     
                     
                     HStack() {
                         Text("クラス")
-                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                         PickerViewStyle(value:$registerViewInfo.selectedClass, text: "classes", list: Consts.classes)
+                        Spacer()
                     }
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                     
                     HStack {
                         HStack(){
@@ -198,7 +202,7 @@ struct RegisterView: View {
                             
                         } label: {
                             Text("登録")
-                                .customButtonLayout()
+                                .customButtonLayout(fontsize:20, isDisabled: buttonDisable)
                         }
                         .alert("同一レースが既に登録されています。",isPresented: $registerViewInfo.isRegisted) {
                             Button("OK"){}
@@ -208,13 +212,13 @@ struct RegisterView: View {
                         .disabled(buttonDisable)
                     }
                 }
+                // 画面の中心にトースト表示するためVStackの外側に定義
                 if self.isToastViewDisplay {
                     CommonToast(title: "登録完了", isShown: $isToastViewDisplay)
                 }
             }
             // ナビゲーションバー設定
             .customNavigationBar(title: "登録")
-            
         }
     }
     
@@ -275,10 +279,10 @@ struct RegisterView: View {
     }
 }
 
-//#Preview {
-//    let date = Date()
-//    @State var isRegisterViewDisplay = false
-//    //    @EnvironmentObject var summaryInfo : SummaryInfo
-//    return RegisterView(selectedDate: date, isRegisterViewDisplay: $isRegisterViewDisplay)
-//}
+#Preview {
+    let date = Date()
+    @State var isRegisterViewDisplay = false
+    //    @EnvironmentObject var summaryInfo : SummaryInfo
+    return RegisterView(selectedDate: date, isRegisterViewDisplay: $isRegisterViewDisplay)
+}
 

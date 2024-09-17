@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 import RealmSwift
 import UIKit
-import IQKeyboardManager
 
 @main
 struct KeibaManagementApp: SwiftUI.App {
@@ -62,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("初期データが登録されていません。")
             importCsvData()
         }
-        // キーボード
-        IQKeyboardManager.shared().isEnabled = true
         return true
     }
     
