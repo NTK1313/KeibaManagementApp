@@ -22,8 +22,6 @@ struct DailyListRow: View {
     
     let realm = try! Realm()
     let dbManager = DatabaseManager()
-    //TODO: スワイプして削除できるようにする
-    
     var body: some View {
         VStack{
             HStack {
@@ -64,7 +62,6 @@ struct DailyListRow: View {
                     }
                 }
                 // 変更ボタン
-                // TODO: 変更ボタン押下したとき、「変更」→「保存」に「削除」→「戻る」に名前変更し、処理も変える
                 Button(action: {
                     if self.isUpdate {
                         // 「保存」ボタンの時の処理

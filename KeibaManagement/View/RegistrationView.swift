@@ -1,5 +1,5 @@
 //
-//  RegisterView.swift
+//  RegistrationView.swift
 //  KeibaManagement
 //
 //  Created by Naoto on 2024/06/28.
@@ -8,15 +8,19 @@
 import SwiftUI
 import RealmSwift
 
-struct RegisterView: View {
+struct RegistrationView: View {
     // MARK: - Properties
     @EnvironmentObject var summaryInfo: SummaryInfo
+    @Environment(\.dismiss) var dismiss
+    // 現在Viewを監視
+    @EnvironmentObject var currentView: CurrentViewInfo
+    
     @State var selectedDate: Date
-    @Binding var isRegisterViewDisplay: Bool
     
     @ObservedObject var registerViewInfo = RegisterViewInfo()
     @State private var isToastViewDisplay = false
     @State private var buttonDisable = false
+    @State private var shouldNavigate = false
     
     let realm = try! Realm()
     let commonUtils = CommonUtils()
@@ -29,7 +33,8 @@ struct RegisterView: View {
     
     // MARK: - View
     var body: some View {
-        ScrollView {
+        SideMenuContainer(content:
+                            ScrollView {
             ZStack {
                 Color.clear
                     .contentShape(Rectangle())
@@ -167,7 +172,6 @@ struct RegisterView: View {
                     .padding(EdgeInsets(top: 0, leading: 100, bottom: 16, trailing: 0))
                     
                     HStack{
-                        // TODO: 戻るボタンを追加するか検討する
                         Button {
                             // バリデーションチェック
                             if !isValidateCheck() {
@@ -177,15 +181,15 @@ struct RegisterView: View {
                                     buttonDisable = true
                                     
                                     saveBalanceOfPayment()
-                                    summaryInfo.isRegisterViewDisplay.toggle()
                                     summaryInfo.raceDay = dateToString(selectedDate)
                                     // 登録成功のトースト表示
                                     isToastViewDisplay = true
-                                    // TODO: ナビゲーションバーの「Back」ボタンも押せないようにする（トースト表示中にBackボタンを押下すると挙動がおかしくなる）
                                     // ダイアログを表出し2秒後にカレンダー画面に戻る
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                                        print("buttonDisable:\(buttonDisable)")
-                                        isRegisterViewDisplay.toggle()
+                                        // 現在日付に戻す
+                                        selectedDate = Date()
+                                        // TopViewに遷移する
+                                        self.shouldNavigate = true
                                     }
                                 } else {
                                     registerViewInfo.isRegisted = true
@@ -204,6 +208,14 @@ struct RegisterView: View {
                             Text("登録")
                                 .customButtonLayout(fontsize:20, isDisabled: buttonDisable)
                         }
+                        
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Text("戻る")
+                            // TODO: カラーは登録と別にするか検討
+                                .customButtonLayout(fontsize:20, isDisabled: buttonDisable)
+                        })
                         .alert("同一レースが既に登録されています。",isPresented: $registerViewInfo.isRegisted) {
                             Button("OK"){}
                         } message: {
@@ -219,6 +231,17 @@ struct RegisterView: View {
             }
             // ナビゲーションバー設定
             .customNavigationBar(title: "登録")
+            
+        }
+        )
+        // サイドメニューから遷移先判断するために現在Viewを登録
+        .onAppear {
+            currentView.updateCurrentView(to: Enums.CurrentView.registration)
+        }
+
+        // 登録完了後にTopViewに遷移
+        NavigationLink(destination: TopCalenderView(selectedDate: Date().convertDateToString(format: Consts.DateFormatter.yyyyMMdd)), isActive: $shouldNavigate) {
+            EmptyView() // 自動遷移のために空のビュー
         }
     }
     
@@ -281,8 +304,6 @@ struct RegisterView: View {
 
 #Preview {
     let date = Date()
-    @State var isRegisterViewDisplay = false
-    //    @EnvironmentObject var summaryInfo : SummaryInfo
-    return RegisterView(selectedDate: date, isRegisterViewDisplay: $isRegisterViewDisplay)
+    return RegistrationView(selectedDate: date)
 }
 

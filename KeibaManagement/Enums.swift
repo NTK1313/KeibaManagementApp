@@ -123,12 +123,23 @@ class Enums {
     enum JraLocalListURL {
         case jra,
              local
-
+        
         var url: String {
             switch self {
             case .jra: return "https://www.jra.go.jp/datafile/seiseki/replay/{year}/jyusyo.html"
             case .local: return "https://www.keiba.go.jp/gradedrace/schedule_{year}.html"
             }
         }
+    }
+    
+    /// 現在表示中のView
+    enum CurrentView: String {
+        case topCalender,    // トップ画面b
+             report,         // 収支レポート
+             jraList,        // JRA重賞一覧
+             localList,      // 地方競馬重賞一覧
+             oldList,        // 過去重賞一覧
+             registration,   // 登録画面
+             none            // どの画面にも遷移させるための定義（通常利用はしない）
     }
 }

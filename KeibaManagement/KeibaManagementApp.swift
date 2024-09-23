@@ -12,31 +12,18 @@ import UIKit
 
 @main
 struct KeibaManagementApp: SwiftUI.App {
-    // TODO: 登録画面において、TopViewで未表示（=未スクロール）の月のデータを登録した場合、登録後にクラッシュする事象あり。（解決策検討）
     // AppDelegateの処理を実行する
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject var summaryInfo = SummaryInfo()
-    
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-    
+    @StateObject var currentViewInfo = CurrentViewInfo()
+
     var body: some Scene {
         WindowGroup {
             TopCalenderView(selectedDate: Date().convertDateToString(format: Consts.DateFormatter.yyyyMMdd))
                 .environmentObject(summaryInfo)
+                .environmentObject(currentViewInfo)
         }
-        .modelContainer(sharedModelContainer)
     }
 }
 // MARK: - AppDelegate設定

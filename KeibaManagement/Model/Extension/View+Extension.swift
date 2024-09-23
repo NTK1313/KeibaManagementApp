@@ -23,6 +23,8 @@ extension View {
             .toolbarBackground(.orange, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarTitleDisplayMode(.inline)
+        // ハンバーガーメニューに統一するためナビゲーションバーのBackは非表示。
+            .navigationBarBackButtonHidden(true)
     }
     
     /// ボタンオブジェクト共通化

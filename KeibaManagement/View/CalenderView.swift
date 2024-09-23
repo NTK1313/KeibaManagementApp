@@ -15,7 +15,6 @@ struct CalendarView: UIViewRepresentable {
     @Binding var selectedDate: String
     @Binding var isDailyListViewDisplay: Bool
     // 複数のプロパティをまとめて管理することができる
-    // TODO: プロパティをSummaryInfoにまとめる
     @ObservedObject var summaryInfo: SummaryInfo
 
     let dbManager = DatabaseManager()
@@ -45,7 +44,7 @@ struct CalendarView: UIViewRepresentable {
         let dateSelection = UICalendarSelectionSingleDate(delegate: context.coordinator)
         view.selectionBehavior = dateSelection
         view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        view.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return view
     }
     

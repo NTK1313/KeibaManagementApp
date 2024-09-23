@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DailyListView: View {
-    // 対象の日付
-    //    @ObservedObject var summaryInfo: SummaryInfo
     @Binding var isDailyListViewDisplay: Bool
     let date: String
     let buyAmount:Int?
@@ -20,7 +18,6 @@ struct DailyListView: View {
         let detail = dbm.getBalanceOfPaymentDetail(key: "raceDay", value: date, sort: "raceID")
         VStack{
             Spacer().frame(height: 25)
-            // TODO: ヘッダーの文言の位置を少し下に下げる
             HStack{
                 Text("合計購入金額: ")
                 Text("¥\(amountNilCheck(buyAmount))")

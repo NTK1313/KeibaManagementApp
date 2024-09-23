@@ -12,7 +12,7 @@
 		5C03C60A2C93BC9700FB7C18 /* BarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03C6092C93BC9700FB7C18 /* BarData.swift */; };
 		5C291DAC2C8FB67200A34469 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C291DAB2C8FB67200A34469 /* ReportModel.swift */; };
 		5C9AA2AA2C7091A9007EE437 /* raceInfo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5C9AA2A92C7091A9007EE437 /* raceInfo.csv */; };
-		5CBAF56F2C2E2D0800118A1A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */; };
+		5CBAF56F2C2E2D0800118A1A /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF56E2C2E2D0800118A1A /* RegistrationView.swift */; };
 		5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5702C2FFB1700118A1A /* Consts.swift */; };
 		5CBAF5772C30EED800118A1A /* RaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5762C30EED800118A1A /* RaceInfo.swift */; };
 		5CBAF5792C38C33900118A1A /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAF5782C38C33900118A1A /* CommonUtils.swift */; };
@@ -48,6 +48,8 @@
 		5CD3700E2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700D2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift */; };
 		5CD370102C6C45B500EA1F82 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700F2C6C45B500EA1F82 /* Enums.swift */; };
 		5CD370122C6ED9B600EA1F82 /* RegisterViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */; };
+		5CE03E992C9FAC7F00C4F711 /* SideMenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */; };
+		5CE03E9B2CA141ED00C4F711 /* CurrentViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE03E9A2CA141ED00C4F711 /* CurrentViewInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,7 @@
 		5C03C6092C93BC9700FB7C18 /* BarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarData.swift; sourceTree = "<group>"; };
 		5C291DAB2C8FB67200A34469 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		5C9AA2A92C7091A9007EE437 /* raceInfo.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = raceInfo.csv; path = "KeibaManagement/Supporting Files/raceInfo.csv"; sourceTree = "<group>"; };
-		5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		5CBAF56E2C2E2D0800118A1A /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		5CBAF5702C2FFB1700118A1A /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		5CBAF5762C30EED800118A1A /* RaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceInfo.swift; sourceTree = "<group>"; };
 		5CBAF5782C38C33900118A1A /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		5CD3700D2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceOfPaymentDetail.swift; sourceTree = "<group>"; };
 		5CD3700F2C6C45B500EA1F82 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewInfo.swift; sourceTree = "<group>"; };
+		5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuContainer.swift; sourceTree = "<group>"; };
+		5CE03E9A2CA141ED00C4F711 /* CurrentViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewInfo.swift; sourceTree = "<group>"; };
 		C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeibaManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F236B75D788A4E5EFB6595 /* Pods-KeibaManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.release.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.release.xcconfig"; sourceTree = "<group>"; };
 		EFB1FB08D3EF617F52C4F52B /* Pods-KeibaManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.debug.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				5C03C6092C93BC9700FB7C18 /* BarData.swift */,
 				5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */,
 				5CBFC2EC2C6AD84E00DAD8F9 /* SummaryInfo.swift */,
+				5CE03E9A2CA141ED00C4F711 /* CurrentViewInfo.swift */,
 				5CD3700C2C6C3ED300EA1F82 /* Realm */,
 			);
 			path = DataModel;
@@ -222,7 +227,8 @@
 				5CBFC2E62C674F2F00DAD8F9 /* Item.swift */,
 				5CD1717F2C2B763600E1FCC1 /* FirstView.swift */,
 				5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */,
-				5CBAF56E2C2E2D0800118A1A /* RegisterView.swift */,
+				5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */,
+				5CBAF56E2C2E2D0800118A1A /* RegistrationView.swift */,
 				5CBB48E72C85BE7400607431 /* SideMenuView.swift */,
 				5CBB48EE2C8BE3D900607431 /* OldGradeRaceSearchView.swift */,
 				5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */,
@@ -417,10 +423,12 @@
 				5C291DAC2C8FB67200A34469 /* ReportModel.swift in Sources */,
 				5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */,
 				5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */,
-				5CBAF56F2C2E2D0800118A1A /* RegisterView.swift in Sources */,
+				5CE03E9B2CA141ED00C4F711 /* CurrentViewInfo.swift in Sources */,
+				5CBAF56F2C2E2D0800118A1A /* RegistrationView.swift in Sources */,
 				5CBFC2F12C6B23E000DAD8F9 /* DailyListView.swift in Sources */,
 				5CBDA8DB2C3CA92F0018B19A /* BalanceOfPayment.swift in Sources */,
 				5CD171702C2B737E00E1FCC1 /* KeibaManagementApp.swift in Sources */,
+				5CE03E992C9FAC7F00C4F711 /* SideMenuContainer.swift in Sources */,
 				5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */,
 				5C03C6082C93ADC000FB7C18 /* OrderedDictionaly+Extension.swift in Sources */,
 			);

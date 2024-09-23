@@ -17,50 +17,59 @@ struct ReportView: View {
     
     @State var monthlySummaryList:OrderedDictionary<String, BalanceOfPaymentSummary> = [:]
     
+    // 現在Viewを監視
+    @EnvironmentObject var currentView: CurrentViewInfo
+    
     var body: some View {
         let reportModel = ReportModel()
-        /**
-         デフォルト表示で当年の年間収支＋各月の月間収支表示         
-         グラフ表示のボタン押下したら最上部にグラフ表示
-         その際に月間収支の表は下部にスライド
-         */
-        VStack {
-            HStack {
-                PickerViewStyle(value:$selectedYear, text: "lastFiveYears", list: Consts.lastFiveYears)
-                Button(action: {
-                    monthlySummaryList = reportModel.getTargetYearData(selectedYear)
-                    isSearch = true
-                    isGraphDisplay = false
-                }, label: {
-                    Text("検索")
-                })
-
+        SideMenuContainer(
+            /**
+             デフォルト表示で当年の年間収支＋各月の月間収支表示
+             グラフ表示のボタン押下したら最上部にグラフ表示
+             その際に月間収支の表は下部にスライド
+             */
+            content:VStack {
+                HStack {
+                    PickerViewStyle(value:$selectedYear, text: "lastFiveYears", list: Consts.lastFiveYears)
+                    Button(action: {
+                        monthlySummaryList = reportModel.getTargetYearData(selectedYear)
+                        isSearch = true
+                        isGraphDisplay = false
+                    }, label: {
+                        Text("検索")
+                    })
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        isGraphDisplay.toggle()
+                    }, label: {
+                        Text(isGraphDisplay ? "グラフ非表示" : "グラフ表示")
+                    })
+                }
+                .padding(EdgeInsets(top: 20, leading: 30, bottom: 20, trailing: 30))
                 Spacer()
-
-                Button(action: {
-                    isGraphDisplay.toggle()
-                }, label: {
-                    Text(isGraphDisplay ? "グラフ非表示" : "グラフ表示")
-                })
-            }
-            .padding(EdgeInsets(top: 20, leading: 30, bottom: 20, trailing: 30))
-            Spacer()
-
-            if isGraphDisplay {
-                ReportGraphView(monthlySummaryList: monthlySummaryList)
-            }
-            
-            if isSearch {
-                // 各月の収支一覧
-                List{
-                    // 12ヶ月分を表示
-                    ForEach(0..<12,id: \.self) { i in
-                        ReportDetailRow(yyyymm: Array(monthlySummaryList.keys)[i], summary: Array(monthlySummaryList.values)[i])
+                
+                if isGraphDisplay {
+                    ReportGraphView(monthlySummaryList: monthlySummaryList)
+                }
+                
+                if isSearch {
+                    // 各月の収支一覧
+                    List{
+                        // 12ヶ月分を表示
+                        ForEach(0..<12,id: \.self) { i in
+                            ReportDetailRow(yyyymm: Array(monthlySummaryList.keys)[i], summary: Array(monthlySummaryList.values)[i])
+                        }
                     }
                 }
             }
+                .customNavigationBar(title: "収支レポート")
+        )
+        // サイドメニューから遷移先判断するために現在Viewを登録
+        .onAppear {
+            currentView.updateCurrentView(to: Enums.CurrentView.report)
         }
-        .customNavigationBar(title: "レポート収支")
     }
 }
 
