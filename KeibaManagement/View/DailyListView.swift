@@ -32,7 +32,6 @@ struct DailyListView: View {
             }
             
             List{
-                // TODO: ForEachの時にidで一意性を担保する理由を理解する。
                 ForEach(0..<detail.count,id: \.self) { i in
                     DailyListRow(detail: detail[i], isDetailDisplay: $isDailyListViewDisplay)
                 }

@@ -31,17 +31,14 @@
 		5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */; };
 		5CBFC2C52C5DB0D100DAD8F9 /* BalanceOfPaymentSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C42C5DB0D100DAD8F9 /* BalanceOfPaymentSummary.swift */; };
 		5CBFC2C92C674CBC00DAD8F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */; };
-		5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2E62C674F2F00DAD8F9 /* Item.swift */; };
 		5CBFC2E92C67592500DAD8F9 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2E82C67592500DAD8F9 /* DatabaseManager.swift */; };
 		5CBFC2EB2C67616B00DAD8F9 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */; };
 		5CBFC2ED2C6AD84E00DAD8F9 /* SummaryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EC2C6AD84E00DAD8F9 /* SummaryInfo.swift */; };
 		5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2EE2C6B03C400DAD8F9 /* String+Extension.swift */; };
 		5CBFC2F12C6B23E000DAD8F9 /* DailyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */; };
 		5CD171702C2B737E00E1FCC1 /* KeibaManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1716F2C2B737E00E1FCC1 /* KeibaManagementApp.swift */; };
-		5CD171722C2B737E00E1FCC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171712C2B737E00E1FCC1 /* ContentView.swift */; };
 		5CD171762C2B737F00E1FCC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD171752C2B737F00E1FCC1 /* Assets.xcassets */; };
 		5CD171792C2B737F00E1FCC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD171782C2B737F00E1FCC1 /* Preview Assets.xcassets */; };
-		5CD171802C2B763600E1FCC1 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1717F2C2B763600E1FCC1 /* FirstView.swift */; };
 		5CD171862C2B772900E1FCC1 /* TopCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */; };
 		5CD1718A2C2B798500E1FCC1 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD171892C2B798500E1FCC1 /* CalenderView.swift */; };
 		5CD3700B2C6C31F800EA1F82 /* DailyListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */; };
@@ -50,6 +47,7 @@
 		5CD370122C6ED9B600EA1F82 /* RegisterViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */; };
 		5CE03E992C9FAC7F00C4F711 /* SideMenuContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */; };
 		5CE03E9B2CA141ED00C4F711 /* CurrentViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE03E9A2CA141ED00C4F711 /* CurrentViewInfo.swift */; };
+		5CE03E9D2CA687B000C4F711 /* SearchRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE03E9C2CA687B000C4F711 /* SearchRaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +74,6 @@
 		5CBFC2C02C424C1100DAD8F9 /* CommonToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToast.swift; sourceTree = "<group>"; };
 		5CBFC2C42C5DB0D100DAD8F9 /* BalanceOfPaymentSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BalanceOfPaymentSummary.swift; path = KeibaManagement/DataModel/BalanceOfPaymentSummary.swift; sourceTree = SOURCE_ROOT; };
 		5CBFC2C82C674CBC00DAD8F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		5CBFC2E62C674F2F00DAD8F9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5CBFC2E82C67592500DAD8F9 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		5CBFC2EA2C67616B00DAD8F9 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		5CBFC2EC2C6AD84E00DAD8F9 /* SummaryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryInfo.swift; sourceTree = "<group>"; };
@@ -84,10 +81,8 @@
 		5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListView.swift; sourceTree = "<group>"; };
 		5CD1716C2C2B737E00E1FCC1 /* KeibaManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeibaManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD1716F2C2B737E00E1FCC1 /* KeibaManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeibaManagementApp.swift; sourceTree = "<group>"; };
-		5CD171712C2B737E00E1FCC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CD171752C2B737F00E1FCC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD171782C2B737F00E1FCC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5CD1717F2C2B763600E1FCC1 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCalenderView.swift; sourceTree = "<group>"; };
 		5CD171892C2B798500E1FCC1 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListRow.swift; sourceTree = "<group>"; };
@@ -96,6 +91,7 @@
 		5CD370112C6ED9B600EA1F82 /* RegisterViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewInfo.swift; sourceTree = "<group>"; };
 		5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuContainer.swift; sourceTree = "<group>"; };
 		5CE03E9A2CA141ED00C4F711 /* CurrentViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewInfo.swift; sourceTree = "<group>"; };
+		5CE03E9C2CA687B000C4F711 /* SearchRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRaceView.swift; sourceTree = "<group>"; };
 		C94DFD8E1189CF1F73D1D3DB /* Pods_KeibaManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeibaManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F236B75D788A4E5EFB6595 /* Pods-KeibaManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.release.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.release.xcconfig"; sourceTree = "<group>"; };
 		EFB1FB08D3EF617F52C4F52B /* Pods-KeibaManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeibaManagement.debug.xcconfig"; path = "Target Support Files/Pods-KeibaManagement/Pods-KeibaManagement.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,14 +218,12 @@
 			children = (
 				5CBDA8D72C3B5F390018B19A /* Components */,
 				5CBB48ED2C8BE1C300607431 /* ExternalLink */,
-				5CD171712C2B737E00E1FCC1 /* ContentView.swift */,
 				5CD171892C2B798500E1FCC1 /* CalenderView.swift */,
-				5CBFC2E62C674F2F00DAD8F9 /* Item.swift */,
-				5CD1717F2C2B763600E1FCC1 /* FirstView.swift */,
 				5CD171852C2B772900E1FCC1 /* TopCalenderView.swift */,
 				5CE03E982C9FAC7F00C4F711 /* SideMenuContainer.swift */,
 				5CBAF56E2C2E2D0800118A1A /* RegistrationView.swift */,
 				5CBB48E72C85BE7400607431 /* SideMenuView.swift */,
+				5CE03E9C2CA687B000C4F711 /* SearchRaceView.swift */,
 				5CBB48EE2C8BE3D900607431 /* OldGradeRaceSearchView.swift */,
 				5CBFC2F02C6B23E000DAD8F9 /* DailyListView.swift */,
 				5CD3700A2C6C31F800EA1F82 /* DailyListRow.swift */,
@@ -395,13 +389,11 @@
 				5CBFC2E92C67592500DAD8F9 /* DatabaseManager.swift in Sources */,
 				5CBDA8D92C3B5F560018B19A /* PickerViewStyle.swift in Sources */,
 				5CBB48F72C8C278F00607431 /* ReportView.swift in Sources */,
-				5CD171722C2B737E00E1FCC1 /* ContentView.swift in Sources */,
 				5CBB48E42C81429000607431 /* Documentation.docc in Sources */,
 				5CBB48F12C8BF0C000607431 /* OldGradeRaceSearchModel.swift in Sources */,
 				5CD3700E2C6C3EF400EA1F82 /* BalanceOfPaymentDetail.swift in Sources */,
 				5CBAF5712C2FFB1700118A1A /* Consts.swift in Sources */,
 				5CBB48EA2C8BDC5400607431 /* ExternalLinkView.swift in Sources */,
-				5CD171802C2B763600E1FCC1 /* FirstView.swift in Sources */,
 				5C03C60A2C93BC9700FB7C18 /* BarData.swift in Sources */,
 				5CD1718A2C2B798500E1FCC1 /* CalenderView.swift in Sources */,
 				5CD171862C2B772900E1FCC1 /* TopCalenderView.swift in Sources */,
@@ -422,12 +414,12 @@
 				5CBFC2C52C5DB0D100DAD8F9 /* BalanceOfPaymentSummary.swift in Sources */,
 				5C291DAC2C8FB67200A34469 /* ReportModel.swift in Sources */,
 				5CBFC2EF2C6B03C400DAD8F9 /* String+Extension.swift in Sources */,
-				5CBFC2E72C674F2F00DAD8F9 /* Item.swift in Sources */,
 				5CE03E9B2CA141ED00C4F711 /* CurrentViewInfo.swift in Sources */,
 				5CBAF56F2C2E2D0800118A1A /* RegistrationView.swift in Sources */,
 				5CBFC2F12C6B23E000DAD8F9 /* DailyListView.swift in Sources */,
 				5CBDA8DB2C3CA92F0018B19A /* BalanceOfPayment.swift in Sources */,
 				5CD171702C2B737E00E1FCC1 /* KeibaManagementApp.swift in Sources */,
+				5CE03E9D2CA687B000C4F711 /* SearchRaceView.swift in Sources */,
 				5CE03E992C9FAC7F00C4F711 /* SideMenuContainer.swift in Sources */,
 				5CBFC2C12C424C1100DAD8F9 /* CommonToast.swift in Sources */,
 				5C03C6082C93ADC000FB7C18 /* OrderedDictionaly+Extension.swift in Sources */,

@@ -15,12 +15,15 @@ extension View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(title)
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 20))
+                        .bold()
                 }
             }
         // TODO: 背景色の検討
+        // TODO: カラーコードをColor+Extensionに定義する
         // 背景色は常時見える状態にしておく
-            .toolbarBackground(.orange, for: .navigationBar)
+            .toolbarBackground(Color(UIColor(red: 38/255, green: 131/255, blue: 0/255, alpha: 1.0)), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarTitleDisplayMode(.inline)
         // ハンバーガーメニューに統一するためナビゲーションバーのBackは非表示。

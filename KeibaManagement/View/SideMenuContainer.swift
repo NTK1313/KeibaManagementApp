@@ -21,6 +21,7 @@ struct SideMenuContainer<Content:View>: View {
                         }) {
                             Image(systemName: "line.horizontal.3")  // ハンバーガーメニュー
                         }
+                        .tint(.white)
                     }
                 }
             SideMenuView(isSideMenuViewDisplay: $isSideMenuViewDisplay)

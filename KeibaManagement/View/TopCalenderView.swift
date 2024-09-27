@@ -76,10 +76,12 @@ struct TopCalenderView: View {
                             } label: {
                                 Image(systemName: "plus")
                             }
+                            .tint(.white)
                         }
                     }
+                    
                 // ナビゲーションバー設定
-                    .customNavigationBar(title: "TEST")
+                    .customNavigationBar(title: "")
             )
         }
         // サイドメニューから遷移先判断するために現在Viewを登録

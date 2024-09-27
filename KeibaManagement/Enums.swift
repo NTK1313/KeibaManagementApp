@@ -134,7 +134,8 @@ class Enums {
     
     /// 現在表示中のView
     enum CurrentView: String {
-        case topCalender,    // トップ画面b
+        case topCalender,    // トップ画面
+             search,         // レース検索画面
              report,         // 収支レポート
              jraList,        // JRA重賞一覧
              localList,      // 地方競馬重賞一覧

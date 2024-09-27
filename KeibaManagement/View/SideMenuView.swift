@@ -23,49 +23,38 @@ struct SideMenuView: View {
         
         let today = Date()
         let year = String(Calendar.current.component(.year, from: today))
-        
+        let menuArray: [(String,String,Enums.CurrentView)] = [
+            ("レース検索", "magnifyingglass",Enums.CurrentView.search),    // 画像アイコン：magnifyingglass　カラー：.blue
+            ("トップ", "calendar", Enums.CurrentView.topCalender),  // 画像アイコン：calendar カラー：
+            ("収支レポート", "report", Enums.CurrentView.report),  // report
+            ("JRA重賞一覧", "jra", Enums.CurrentView.jraList),
+            ("地方重賞一覧", "nar", Enums.CurrentView.localList),
+            ("過去重賞一覧", "arrow.counterclockwise", Enums.CurrentView.oldList)
+        ]
         ZStack {
             // 背景部分
             GeometryReader { geometry in
-                HStack{
+                HStack {
                     NavigationStack {
-                        VStack(spacing: 20) {
-                            // TODO: 検索一覧はListにしたい
-                            Text("その他検索")
-                                .padding(.top,10)
-                            
-                            Button(action: {
-                                print("レース検索押下")
-                            }, label: {
-                                Text("レース検索")
-                            })
-                            
-                            Button(action: {
-                                checkCurrentView(Enums.CurrentView.topCalender)
-                            }, label: {
-                                Text("トップ")
-                            })
-                            Button(action: {
-                                checkCurrentView(Enums.CurrentView.report)
-                            }, label: {
-                                Text("収支レポート")
-                            })
-                            
-                            Button(action: {
-                                checkCurrentView(Enums.CurrentView.jraList)
-                            }, label: {
-                                Text("JRA重賞一覧")
-                            })
-                            Button(action: {
-                                checkCurrentView(Enums.CurrentView.localList)
-                            }, label: {
-                                Text("地方重賞一覧")
-                            })
-                            Button(action: {
-                                checkCurrentView(Enums.CurrentView.oldList)
-                            }, label: {
-                                Text("過去重賞一覧")
-                            })
+                        VStack {
+                            List(menuArray, id: \.0) { menu in
+                                HStack {
+                                    // TODO: 検索項目ごとに画像変えたい
+                                    Image(menu.1)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 25, height: 25)
+                                    Button(action: {
+                                        checkCurrentView(menu.2)
+                                    }, label: {
+                                        Text(menu.0)
+                                    })
+                                    .contentShape(Rectangle())
+                                }
+                            }
+                            // Listの余白をなくして画面の横幅いっぱいに広げる
+                            .listStyle(.plain)
+                            .frame(maxWidth: .infinity)
                             // 上寄せ
                             Spacer()
                             
@@ -75,6 +64,9 @@ struct SideMenuView: View {
                                 switch selectedDestination {
                                 case .topCalender:
                                     TopCalenderView(selectedDate: Date().convertDateToString(format: Consts.DateFormatter.yyyyMMdd))
+                                case .search:
+                                    // TODO: 遷移画面未作成
+                                    SearchRaceView()
                                 case .report:
                                     ReportView()
                                 case .jraList:
@@ -83,10 +75,10 @@ struct SideMenuView: View {
                                     ExternalLinkView(url: "https://www.keiba.go.jp/gradedrace/schedule_\(year).html",sourceView: Enums.CurrentView.localList)
                                 case .oldList:
                                     OldGradeRaceSearchView()
-                                // サイドメニューには表示されない
+                                    // サイドメニューには表示されない
                                 case .registration:
                                     EmptyView()
-                                // 発生しない遷移先
+                                    // 発生しない遷移先
                                 case .none:
                                     EmptyView()
                                 }
@@ -95,21 +87,25 @@ struct SideMenuView: View {
                             }
                         }
                     }
+                    // サイドメニューは全画面の半分だけ表示する
+                    .frame(width: geometry.size.width / 2, height: geometry.size.height)
+                    .background(Color(UIColor.white))
+                    // falseの時はスマホの横幅分だけX軸をマイナスして非表示（=表示位置を画面外）にする。
+                    .offset(x: self.isSideMenuViewDisplay ? 0 : -geometry.size.width)
+                    .animation(.easeIn(duration: 0.25),value: isSideMenuViewDisplay)
+                    
+                    // onTapGestureはListと競合するとListのボタンを押下しても発火しなくなる。
+                    // そのため画面を二分割して右半分をタップするとサイドメニューが非表示になるようにする。
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            self.isSideMenuViewDisplay = false
+                        }
                 }
-                // サイドメニューは全画面の半分だけ表示する
-                .frame(width: geometry.size.width / 2, height: geometry.size.height)
-                // TODO: サイドメニューの背景色を検討する
-                .background(Color(UIColor.systemGray6))
-                // falseの時はスマホの横幅分だけX軸をマイナスして非表示（=表示位置を画面外）にする。
-                .offset(x: self.isSideMenuViewDisplay ? 0 : -geometry.size.width)
-                .animation(.easeIn(duration: 0.25),value: isSideMenuViewDisplay)
             }
             .background(Color.gray.opacity(0.8))
             .opacity(self.isSideMenuViewDisplay ? 1.0 : 0.0)
             .animation(.easeIn(duration: 0.25),value: isSideMenuViewDisplay)
-            .onTapGesture {
-                self.isSideMenuViewDisplay = false
-            }
         }
     }
     
